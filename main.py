@@ -23,7 +23,6 @@ while True:
         game_object = {"title": title, "release_date": release_date, "image": image}
         if game_object['title'] not in list(map(lambda x: x['title'], prev_free_games)):
             prev_free_games.append(game_object)
-            # if image == ''
             msg = f"New giveaway appeared\n{game_object['title']}\nat\n{game_object['release_date']}!\n"
             bot.send_photo(chat_id,game_object['image'], caption=msg)
         for game in prev_free_games:
